@@ -21,9 +21,13 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // EXPRESS ROUTES
 // using the / path to deliver a string
-app.get('/', function (req, res) {
-  res.send('Joe\'s World');
-})
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
+
+// TESTING THE EXPRESS ROUTE
+// app.get('/', function (req, res) {
+//   res.send('Joe\'s World');
+// })
 
 // EXPRESS'S LISTENING COMPONENT
 // allows the server to run on localhost at whichever port was specified
