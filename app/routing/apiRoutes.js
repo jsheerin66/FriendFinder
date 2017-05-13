@@ -11,5 +11,22 @@ module.exports = function(app) {
 
   app.post("/api/friends", function(req, res) {
     console.log(req.body);
+    for(var i = 0; i < req.body.scores.length; i++){
+      req.body.scores[i] = parseInt(req.body.scores[i])
+    }
+    for(var i = 0; i < friends.length; i++){
+      console.log("===============");
+      console.log(friends[i].name);
+      console.log("===============");
+      for (var j = 0; j < 10; j++) {
+        console.log(friends[i].scores[j]);
+      }
+    }
+    friends.push(req.body);
+    var hanky = {
+      name: "Mr. hanky",
+      photo: "http://rs152.pbsrc.com/albums/s169/cokacola151/mrhanky.gif~c200"
+    }
+    res.json(hanky);
   });
 }

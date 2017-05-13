@@ -6,6 +6,7 @@ var express = require('express');
 
 // PORT IN USE
 // specifying to use 8080 or restate the port in the terminal
+// are there other ports? what is the difference between ports?
 var PORT = 8080 || process.argv[2];
 
 // CREATING EXPRESS SERVER
@@ -14,6 +15,8 @@ var app = express();
 
 // PLUGGING IN MIDDLEWARE
 // body parser is set up as middleware
+// is this specific to my code or can be copy and pasted to achieve same result on diff apps?
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
@@ -26,7 +29,7 @@ require("./app/routing/htmlRoutes")(app);
 
 // TESTING THE EXPRESS ROUTE
 // app.get('/', function (req, res) {
-//   res.send('Joe\'s World');
+//   res.send('Justin\'s World');
 // })
 
 // EXPRESS'S LISTENING COMPONENT
